@@ -1,0 +1,38 @@
+﻿@model IEnumerable<pokemonModel>
+
+@{
+    ViewData["Title"] = "List of Pokemons!";
+}
+
+<h1>List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("Id")</th>
+            <th>@Html.DisplayName("Name")</th>
+            <th>@Html.DisplayName("Season")</th>
+            <th>@Html.DisplayName("Partner")</th>
+            <th>@Html.DisplayName("Image Url")</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.name</td>
+                <td>@item.season</td>
+                <td>@item.partner</td>
+                <td><img src="@item.imageUrl" class="img-fluid" width="140" height="140"/></td>
+                <td><a href="/Pokemon/update/@item.Id" type="button" class="btn btn-primary">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a href="/Pokemon/redirect" type="button" class="btn btn-primary">Save Pokemon</a>
+</div>
+

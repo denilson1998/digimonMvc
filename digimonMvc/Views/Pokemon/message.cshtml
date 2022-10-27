@@ -1,0 +1,23 @@
+﻿namespace digimonMvc.Views.Pokemon
+{
+    public class message
+    {
+    }
+}
+@if (TempData["Sweet"] != null)
+{
+    @section Scripts{
+        <script>
+               $(function() {
+                    swal({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Pokemon Added!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+               })
+
+        </script>
+    }
+}
